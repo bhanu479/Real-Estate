@@ -15,9 +15,9 @@
             <h3>Capita crime rate by town</h3><input id="first" name="crim" type="number ">
             <h3>Proportion of residential land zoned for lots over 25,000 sq.ft.</h3><br><input id="second" name="zn" required="required">
             <h3>Proportion of non-retail business acres per town</h3><input id="third" name="indus" required="required">
-            <h3>Charles River dummy variablel</h3><br><select name="chas" id="resea" required="required">
-                <option value="Near river">Near river</option>
-                <option value="Not near river">Not near river</option>
+            <h3>Near River</h3><br><select name="chas" id="resea" required="required">
+                <option value="Near river">Yes</option>
+                <option value="Not near river">No</option>
             </select>
             <h3>Nitric oxides concentration (parts per 10 million)</h3><br><input id="fourth" name="nox" required="required">
             <h3>Average number of rooms per dwelling</h3><br><input id="fourth" name="rm" required="required">
@@ -30,8 +30,12 @@
             <h3>% lower status of the population</h3><br><input id="fourth" name="last" required="required">
 
 
-            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
-            <br>
+            <br><br>
+            <a href="prediction.html">
+                <button id="sub",value="preditcion page",name="submit_button">Calculate the Selling Price</button>
+            </a>
+
+
 
 
 
@@ -40,7 +44,6 @@
 
 
 
-        <br><br><h3>{{ prediction_text }}<h3>
     </div>
 
 
@@ -53,12 +56,7 @@
             padding: 0px;
         }
         
-        #research {
-            font-size: 18px;
-            width: 100px;
-            height: 23px;
-            top: 23px;
-        }
+
         
         #box {
             border-radius: 60px;
@@ -78,33 +76,11 @@
             font-size: 14px;
         }
         
-        #fuel {
-            width: 83px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 20px;
-        }
-        
-        #fuel:hover {
-            background-color: coral;
-        }
-        
-        #research {
-            width: 99px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-        
-        #research:hover {
-            background-color: coral;
-        }
+
         
         #resea {
-            width: 99px;
-            height: 43px;
+            width: 100px;
+            height: 60px;
             text-align: center;
             border-radius: 14px;
             font-size: 18px;
@@ -115,8 +91,8 @@
         }
         
         #sub {
-            width: 120px;
-            height: 43px;
+            width: 150px;
+            height: 80px;
             text-align: center;
             border-radius: 14px;
             font-size: 18px;

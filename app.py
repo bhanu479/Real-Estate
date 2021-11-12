@@ -19,10 +19,12 @@ model = load('predition.joblib')
 @app.route('/',methods=['GET'])
 def Home():
     return render_template('index.html')
+@app.route('/prediction',methods=['GET',"POST"])
+def about():
+    return render_template('prediction.html')
 
 
-standard_to = StandardScaler()
-@app.route("/predict", methods=['POST'])
+@app.route("/predict", methods=['POST','GET'])
 def predict():
     if request.method == 'POST':
         crim = float(request.form['crim'])
@@ -44,11 +46,13 @@ def predict():
         last = float(request.form['last'])
         x = [[crim, zn, indus, chas_detail, nox, rm,age,dis,rad,tax,ptratio,
                                         b_detail,last]]
-        prediction = model.predict(data(x))
-        if prediction < 0:
-            return render_template('index.html', prediction_texts="Sorry you cannot sell this house")
+        result = model.predict(data(x))
+
+        if result < 0:
+            return render_template('prediction.html', prediction_text="Sorry you cannot sell this house")
         else:
-            return render_template('index.html', prediction_text="You Can Sell The House at {} in 1000$".format(prediction))
+            return render_template('prediction.html', prediction_text="You Can Sell The House at {} in 1000$".format(result))
+
 
     else:
         return render_template('index.html')
