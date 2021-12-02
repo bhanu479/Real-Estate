@@ -18,10 +18,7 @@ app = Flask(__name__)
 model = load('predition.joblib')
 @app.route('/',methods=['GET'])
 def Home():
-    return render_template('index.html')
-@app.route('/prediction',methods=['GET',"POST"])
-def about():
-    return render_template('prediction.html')
+    return render_template('video.html')
 
 
 @app.route("/predict", methods=['POST','GET'])
@@ -31,7 +28,7 @@ def predict():
         zn = float(request.form['zn'])
         indus = float(request.form['indus'])
         chas = request.form['chas']
-        if (chas == 'Near river'):
+        if (chas == '1'):
             chas_detail = 1
         else:
             chas_detail = 0
@@ -43,19 +40,18 @@ def predict():
         tax = float(request.form['tax'])
         ptratio = float(request.form['ptratio'])
         b_detail = float(request.form['b_detail'])
-        last = float(request.form['last'])
+        lstat = float(request.form['lstat'])
         x = [[crim, zn, indus, chas_detail, nox, rm,age,dis,rad,tax,ptratio,
-                                        b_detail,last]]
+                                        b_detail,lstat]]
         result = model.predict(data(x))
 
         if result < 0:
-            return render_template('prediction.html', prediction_text="Sorry you cannot sell this house")
+            return render_template('video.html', prediction_text="Sorry you cannot sell this house")
         else:
-            return render_template('prediction.html', prediction_text="You Can Sell The House at {} in 1000$".format(result))
-
+            return render_template('video.html', prediction_text="You Can Sell The House at {} in 1000$".format(result[0]))
 
     else:
-        return render_template('index.html')
+        return render_template('video.html')
 
 def data(pred):
     housing = pd.read_csv("data.csv")

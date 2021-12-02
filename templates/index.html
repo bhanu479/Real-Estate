@@ -15,9 +15,9 @@
             <h3>Capita crime rate by town</h3><input id="first" name="crim" type="number ">
             <h3>Proportion of residential land zoned for lots over 25,000 sq.ft.</h3><br><input id="second" name="zn" required="required">
             <h3>Proportion of non-retail business acres per town</h3><input id="third" name="indus" required="required">
-            <h3>Near River</h3><br><select name="chas" id="resea" required="required">
-                <option value="Near river">Yes</option>
-                <option value="Not near river">No</option>
+            <h3>Charles River dummy variablel</h3><br><select name="chas" id="resea" required="required">
+                <option value="Near river">Near river</option>
+                <option value="Not near river">Not near river</option>
             </select>
             <h3>Nitric oxides concentration (parts per 10 million)</h3><br><input id="fourth" name="nox" required="required">
             <h3>Average number of rooms per dwelling</h3><br><input id="fourth" name="rm" required="required">
@@ -27,15 +27,11 @@
             <h3>Full-value property-tax rate per $10,000</h3><br><input id="fourth" name="tax" required="required">
             <h3>Pupil-teacher ratio by town</h3><br><input id="fourth" name="ptratio" required="required">
             <h3>1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town</h3><br><input id="fourth" name="b_detail" required="required">
-            <h3>% lower status of the population</h3><br><input id="fourth" name="last" required="required">
+            <h3>1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town</h3><br><input id="fourth" name="last" required="required">
 
 
-            <br><br>
-            <a href="prediction.html">
-                <button id="sub",value="preditcion page",name="submit_button">Calculate the Selling Price</button>
-            </a>
-
-
+            <br><br><button id="sub" type="submit">Calculate the Selling Price</button>
+            <br>
 
 
 
@@ -44,6 +40,7 @@
 
 
 
+        <br><br><h3>{{ prediction_text }}<h3>
     </div>
 
 
@@ -55,9 +52,14 @@
             text-align: center;
             padding: 0px;
         }
-        
 
-        
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+
         #box {
             border-radius: 60px;
             border-color: 45px;
@@ -75,54 +77,76 @@
             margin: 0px;
             font-size: 14px;
         }
-        
 
-        
-        #resea {
-            width: 100px;
-            height: 60px;
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+
+        #fuel:hover {
+            background-color: coral;
+        }
+
+        #research {
+            width: 99px;
+            height: 43px;
             text-align: center;
             border-radius: 14px;
             font-size: 18px;
         }
-        
+
+        #research:hover {
+            background-color: coral;
+        }
+
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
         #resea:hover {
             background-color: coral;
         }
-        
+
         #sub {
-            width: 150px;
-            height: 80px;
+            width: 120px;
+            height: 43px;
             text-align: center;
             border-radius: 14px;
             font-size: 18px;
         }
-        
+
         #sub:hover {
             background-color: darkcyan;
         }
-        
+
         #first {
             border-radius: 14px;
             height: 25px;
             font-size: 20px;
             text-align: center;
         }
-        
+
         #second {
             border-radius: 14px;
             height: 25px;
             font-size: 20px;
             text-align: center;
         }
-        
+
         #third {
             border-radius: 14px;
             height: 25px;
             font-size: 20px;
             text-align: center;
         }
-        
+
         #fourth {
             border-radius: 14px;
             height: 25px;
