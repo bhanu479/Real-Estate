@@ -60,7 +60,7 @@
           </p>
           <a class="btn btn-primary btn-lg" href="https://github.com/bhanu479/Real-Estate" role="button">Code</a>
         </div>
-        <img class="img-fluid w-50 d-none d-sm-block" src="img/showcase.svg" alt="">
+        <img class="img-fluid w-50 d-none d-sm-block" src="../img/showcase.svg" alt="">
       </div>
     </div>
   </section>
@@ -130,38 +130,39 @@
         </div>
         <!-- Button trigger modal -->
         <div class="text-center">
-          <button type="button" value="submit" id='btn' class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="submit" id="btn" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
             Get price
           </button>
           <!-- Modal -->
+          <h3>{{ prediction_text }}</h3>
           
 
         </div>
 
       </form>
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+      <!--
+      <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   {{ prediction_text }}
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
           </div>
           <script type="text/javascript">
-            $('#btn').on('click', function(){
-              $('#exampleModal').modal('show');
+            $("#btn").click(function () {
+                $('#myModal').modal('show');
             });
           </script>
-
+-->
 
 
 

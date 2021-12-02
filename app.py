@@ -48,7 +48,7 @@ def predict():
         if result < 0:
             return render_template('video.html', prediction_text="Sorry you cannot sell this house")
         else:
-            return render_template('video.html', prediction_text="You Can Sell The House at {} in 1000$".format(result[0]))
+            return render_template('video.html', prediction_text="You Can Sell The House at {} in 1000$".format(result))
 
     else:
         return render_template('video.html')
